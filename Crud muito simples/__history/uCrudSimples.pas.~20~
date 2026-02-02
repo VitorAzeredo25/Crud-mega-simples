@@ -1,0 +1,53 @@
+unit uCrudSimples;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
+  Vcl.Grids, Vcl.ComCtrls;
+
+type
+  TForm1 = class(TForm)
+    pgcPrincipal: TPageControl;
+    tbLista: TTabSheet;
+    tbCadastro: TTabSheet;
+    StringGrid1: TStringGrid;
+    edtNome: TLabeledEdit;
+    edtIdade: TLabeledEdit;
+    edtSexo: TLabeledEdit;
+    edtGosta: TLabeledEdit;
+    btnEnviar: TButton;
+    procedure btnEnviarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnEnviarClick(Sender: TObject);
+var
+  linha: Integer;
+begin
+  linha := StringGrid1.RowCount;
+
+  StringGrid1.RowCount := StringGrid1.RowCount + 1;
+
+  StringGrid1.Cells[1,linha]:=edtNome.Text;
+  StringGrid1.Cells[2,linha]:=edtIdade.Text;
+  StringGrid1.Cells[3,linha]:=edtSexo.Text;
+  StringGrid1.Cells[4,linha]:=edtGosta.Text;
+
+
+
+  ShowMessage('Usuário cadastrado');
+end;
+
+end.

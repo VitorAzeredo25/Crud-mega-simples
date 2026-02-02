@@ -1,0 +1,103 @@
+object frmCadastro: TfrmCadastro
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Cadastro'
+  ClientHeight = 361
+  ClientWidth = 493
+  Color = clBtnFace
+  DefaultMonitor = dmMainForm
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnCreate = FormCreate
+  TextHeight = 15
+  object pgcPrincipal: TPageControl
+    Left = 0
+    Top = 0
+    Width = 493
+    Height = 361
+    ActivePage = tbLista
+    Align = alClient
+    TabOrder = 0
+    ExplicitWidth = 624
+    ExplicitHeight = 441
+    object tbLista: TTabSheet
+      Caption = 'Lista'
+      object StringGrid1: TStringGrid
+        Left = 0
+        Top = 0
+        Width = 485
+        Height = 331
+        Align = alClient
+        DefaultColWidth = 95
+        DefaultRowHeight = 30
+        DrawingStyle = gdsGradient
+        RowCount = 1
+        FixedRows = 0
+        TabOrder = 0
+        ExplicitWidth = 473
+        ExplicitHeight = 318
+      end
+    end
+    object tbCadastro: TTabSheet
+      Caption = 'Cadastro'
+      ImageIndex = 1
+      object edtNome: TLabeledEdit
+        Left = 32
+        Top = 40
+        Width = 121
+        Height = 23
+        EditLabel.Width = 33
+        EditLabel.Height = 15
+        EditLabel.Caption = 'Nome'
+        TabOrder = 0
+        Text = ''
+      end
+      object edtIdade: TLabeledEdit
+        Left = 216
+        Top = 40
+        Width = 121
+        Height = 23
+        EditLabel.Width = 29
+        EditLabel.Height = 15
+        EditLabel.Caption = 'Idade'
+        TabOrder = 1
+        Text = ''
+      end
+      object edtSexo: TLabeledEdit
+        Left = 32
+        Top = 128
+        Width = 121
+        Height = 23
+        EditLabel.Width = 24
+        EditLabel.Height = 15
+        EditLabel.Caption = 'Sexo'
+        TabOrder = 2
+        Text = ''
+      end
+      object edtGosta: TLabeledEdit
+        Left = 216
+        Top = 128
+        Width = 121
+        Height = 23
+        EditLabel.Width = 76
+        EditLabel.Height = 15
+        EditLabel.Caption = 'Gosta de caf'#233'?'
+        TabOrder = 3
+        Text = ''
+      end
+      object btnEnviar: TButton
+        Left = 112
+        Top = 184
+        Width = 193
+        Height = 49
+        Caption = 'Enviar'
+        TabOrder = 4
+        OnClick = btnEnviarClick
+      end
+    end
+  end
+end

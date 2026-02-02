@@ -1,0 +1,62 @@
+unit uCrudSimples;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
+  Vcl.Grids, Vcl.ComCtrls;
+
+type
+  TfrmCadastro = class(TForm)
+    pgcPrincipal: TPageControl;
+    tbLista: TTabSheet;
+    tbCadastro: TTabSheet;
+    StringGrid1: TStringGrid;
+    edtNome: TLabeledEdit;
+    edtIdade: TLabeledEdit;
+    edtSexo: TLabeledEdit;
+    edtGosta: TLabeledEdit;
+    btnEnviar: TButton;
+    procedure btnEnviarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadastro: TfrmCadastro;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmCadastro.btnEnviarClick(Sender: TObject);
+var
+  linha: Integer;
+begin
+  linha := StringGrid1.RowCount;
+
+  StringGrid1.RowCount := StringGrid1.RowCount + 1;
+
+  StringGrid1.Cells[1,linha]:=edtNome.Text;
+  StringGrid1.Cells[2,linha]:=edtIdade.Text;
+  StringGrid1.Cells[3,linha]:=edtSexo.Text;
+  StringGrid1.Cells[4,linha]:=edtGosta.Text;
+
+
+
+  ShowMessage('Usuário cadastrado');
+end;
+
+procedure TfrmCadastro.FormCreate(Sender: TObject);
+begin
+  StringGrid1.Cells[1,0]:= 'Nome';
+  StringGrid1.Cells[2,0]:= 'Idade';
+  StringGrid1.Cells[3,0]:= 'Sexo';
+  StringGrid1.Cells[4,0]:= 'Gosta de café?';
+end;
+
+end.
