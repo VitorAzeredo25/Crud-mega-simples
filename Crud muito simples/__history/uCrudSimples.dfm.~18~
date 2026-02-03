@@ -37,7 +37,6 @@ object frmCadastro: TfrmCadastro
         DrawingStyle = gdsGradient
         RowCount = 1
         FixedRows = 0
-        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goFixedRowDefAlign]
         TabOrder = 0
       end
       object pnlBotao: TPanel

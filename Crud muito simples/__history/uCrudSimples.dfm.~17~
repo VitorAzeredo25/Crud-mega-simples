@@ -19,7 +19,7 @@ object frmCadastro: TfrmCadastro
     Top = 0
     Width = 493
     Height = 361
-    ActivePage = tbLista
+    ActivePage = tbCadastro
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 491
@@ -37,8 +37,9 @@ object frmCadastro: TfrmCadastro
         DrawingStyle = gdsGradient
         RowCount = 1
         FixedRows = 0
-        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goFixedRowDefAlign]
         TabOrder = 0
+        ExplicitWidth = 305
+        ExplicitHeight = 169
       end
       object pnlBotao: TPanel
         Left = 0
