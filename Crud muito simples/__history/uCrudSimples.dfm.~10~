@@ -19,7 +19,7 @@ object frmCadastro: TfrmCadastro
     Top = 0
     Width = 493
     Height = 361
-    ActivePage = tbCadastro
+    ActivePage = tbLista
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 491
@@ -56,7 +56,6 @@ object frmCadastro: TfrmCadastro
           Height = 33
           Caption = 'Excluir'
           TabOrder = 0
-          OnClick = btnExcluirClick
         end
         object btnFechar: TButton
           Left = 384
@@ -117,22 +116,13 @@ object frmCadastro: TfrmCadastro
         Text = ''
       end
       object btnEnviar: TButton
-        Left = 32
+        Left = 112
         Top = 184
         Width = 193
         Height = 49
         Caption = 'Enviar'
         TabOrder = 4
         OnClick = btnEnviarClick
-      end
-      object btnLimpar: TButton
-        Left = 248
-        Top = 184
-        Width = 193
-        Height = 49
-        Caption = 'Limpar'
-        TabOrder = 5
-        OnClick = btnLimparClick
       end
     end
   end

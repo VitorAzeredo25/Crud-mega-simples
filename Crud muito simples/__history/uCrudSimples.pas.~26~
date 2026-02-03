@@ -21,12 +21,10 @@ type
     pnlBotao: TPanel;
     btnExcluir: TButton;
     btnFechar: TButton;
-    btnLimpar: TButton;
     procedure btnEnviarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnFecharClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
-    procedure btnLimparClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,40 +63,37 @@ var
 begin
   LinhaSelecionada := StringGrid1.Row;
 
+  // 1. VALIDAÇÃO
+  // Garante que não está tentando apagar o título (linha 0)
+  // E garante que existe algo para apagar
   if (LinhaSelecionada < 1) or (StringGrid1.RowCount <= 1) then
   begin
     ShowMessage('Selecione um registro válido para excluir.');
     Exit;
   end;
 
+  // Confirmação opcional (boa prática)
   if MessageDlg('Tem certeza que deseja excluir esta linha?',
     mtConfirmation, [mbYes, mbNo], 0) = mrNo then Exit;
 
+  // 2. MOVIMENTAÇÃO (O "Pulo do Gato")
+  // Faz um loop começando na linha que queremos apagar até a penúltima linha.
+  // Em cada passo, copiamos o conteúdo da linha DE BAIXO (i + 1) para a ATUAL (i).
   for i := LinhaSelecionada to StringGrid1.RowCount - 2 do
   begin
     StringGrid1.Rows[i] := StringGrid1.Rows[i + 1];
   end;
 
+  // 3. REMOÇÃO FINAL
+  // Como puxamos tudo pra cima, a última linha ficou duplicada.
+  // Agora apenas cortamos a última linha diminuindo a contagem.
   StringGrid1.RowCount := StringGrid1.RowCount - 1;
 end;
-
-
 
 procedure TfrmCadastro.btnFecharClick(Sender: TObject);
 begin
   Close;
 end;
-
-procedure TfrmCadastro.btnLimparClick(Sender: TObject);
-begin
-  edtNome.Text := '';
-  edtIdade.Text := '';
-  edtSexo.Text := '';
-  edtGosta.Text := '';
-end;
-
-
-
 
 procedure TfrmCadastro.FormCreate(Sender: TObject);
 begin

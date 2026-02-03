@@ -19,7 +19,7 @@ object frmCadastro: TfrmCadastro
     Top = 0
     Width = 493
     Height = 361
-    ActivePage = tbCadastro
+    ActivePage = tbLista
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 491

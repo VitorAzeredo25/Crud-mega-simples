@@ -82,8 +82,6 @@ begin
   StringGrid1.RowCount := StringGrid1.RowCount - 1;
 end;
 
-
-
 procedure TfrmCadastro.btnFecharClick(Sender: TObject);
 begin
   Close;
@@ -96,9 +94,6 @@ begin
   edtSexo.Text := '';
   edtGosta.Text := '';
 end;
-
-
-
 
 procedure TfrmCadastro.FormCreate(Sender: TObject);
 begin
