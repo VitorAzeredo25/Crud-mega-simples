@@ -82,8 +82,8 @@ begin
 
   ShowMessage('Dados salvos com sucesso!');
 
-  btnLimparClick(Self);
-  pgcPrincipal.ActivePage := tbLista;
+  //btnLimparClick(Self);
+  //pgcPrincipal.ActivePage := tbLista;
 end;
 
 procedure TfrmCadastro.btnExcluirClick(Sender: TObject);

@@ -70,15 +70,6 @@ object frmCadastro: TfrmCadastro
           TabOrder = 1
           OnClick = btnFecharClick
         end
-        object btnEditar: TButton
-          Left = 176
-          Top = 16
-          Width = 89
-          Height = 33
-          Caption = 'Editar'
-          TabOrder = 2
-          OnClick = btnEditarClick
-        end
       end
     end
     object tbCadastro: TTabSheet

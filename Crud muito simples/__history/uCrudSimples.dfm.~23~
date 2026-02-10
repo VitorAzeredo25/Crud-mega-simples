@@ -19,7 +19,7 @@ object frmCadastro: TfrmCadastro
     Top = 0
     Width = 493
     Height = 361
-    ActivePage = tbLista
+    ActivePage = tbCadastro
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 491
@@ -77,7 +77,6 @@ object frmCadastro: TfrmCadastro
           Height = 33
           Caption = 'Editar'
           TabOrder = 2
-          OnClick = btnEditarClick
         end
       end
     end

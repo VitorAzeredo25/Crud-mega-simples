@@ -77,7 +77,6 @@ object frmCadastro: TfrmCadastro
           Height = 33
           Caption = 'Editar'
           TabOrder = 2
-          OnClick = btnEditarClick
         end
       end
     end

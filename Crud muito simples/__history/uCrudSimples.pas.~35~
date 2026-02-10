@@ -63,27 +63,20 @@ end;
 
 procedure TfrmCadastro.btnEnviarClick(Sender: TObject);
 var
-  LinhaDestino: Integer;
+  linha: Integer;
 begin
-  if FLinhaEmEdicao = -1 then
-  begin
-    StringGrid1.RowCount := StringGrid1.RowCount + 1;
-    LinhaDestino := StringGrid1.RowCount - 1;
-  end
-  else
-  begin
-    LinhaDestino := FLinhaEmEdicao;
-  end;
+  linha := StringGrid1.RowCount;
 
-  StringGrid1.Cells[1, LinhaDestino] := edtNome.Text;
-  StringGrid1.Cells[2, LinhaDestino] := edtIdade.Text;
-  StringGrid1.Cells[3, LinhaDestino] := edtSexo.Text;
-  StringGrid1.Cells[4, LinhaDestino] := edtGosta.Text;
+  StringGrid1.RowCount := StringGrid1.RowCount + 1;
 
-  ShowMessage('Dados salvos com sucesso!');
+  StringGrid1.Cells[1,linha]:=edtNome.Text;
+  StringGrid1.Cells[2,linha]:=edtIdade.Text;
+  StringGrid1.Cells[3,linha]:=edtSexo.Text;
+  StringGrid1.Cells[4,linha]:=edtGosta.Text;
 
-  btnLimparClick(Self);
-  pgcPrincipal.ActivePage := tbLista;
+
+
+  ShowMessage('Usuário cadastrado');
 end;
 
 procedure TfrmCadastro.btnExcluirClick(Sender: TObject);
